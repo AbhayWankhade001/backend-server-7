@@ -39,7 +39,8 @@ async function connect(){
         const db = await mongoose.connect(ENV.ATLAS_URI, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
-           
+            useFindAndModify: false,
+  useCreateIndex: true,
             serverSelectionTimeoutMS: 5000 // Add this option
         });
         console.log("Database Connected");
@@ -50,4 +51,3 @@ async function connect(){
     }
 }
 
-export default connect;
